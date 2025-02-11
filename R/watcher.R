@@ -2,6 +2,7 @@ library(fs)
 library(later)
 library(purrr)
 
+#' @export
 watcher <- function(...) {
   paths_to_watch <- list(...) |> purrr::imap(function(paths, name) {
     c(paths, name)

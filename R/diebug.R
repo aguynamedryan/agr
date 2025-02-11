@@ -1,3 +1,4 @@
+#' @export
 diebug <- function(message = NULL, env = rlang::caller_env()) {
   if (getOption("diebug.debug", default = FALSE)) {
     if (!is.null(message)) {
