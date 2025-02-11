@@ -10,6 +10,8 @@ Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.2
 Imports: 
     purrr,
-    stringr
+    rlang,
+    stringr,
+    testthat
 URL: https://github.com/aguynamedryan/agr
 BugReports: https://github.com/aguynamedryan/agr/issues
