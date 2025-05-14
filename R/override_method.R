@@ -1,9 +1,10 @@
 inside_package <- function(package_name, code) {
-  rlang::env_unlock(env = asNamespace(package_name))
-  rlang::env_binding_unlock(env = asNamespace(package_name))
+  pkg_ns <- asNamespace(package_name)
+  # Unlock all bindings in the namespace
+  rlang::env_binding_unlock_all(env = pkg_ns)
   result <- code
-  rlang::env_binding_lock(env = asNamespace(package_name))
-  rlang::env_lock(asNamespace(package_name))
+  # Lock all bindings in the namespace
+  rlang::env_binding_lock_all(env = pkg_ns)
   result
 }
 
